@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning JavaScript DOM</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id="title">Learning JavaScript DOM</h1>
+    <p class="text">Hey Mom, I'm Leaning JavaScript DOM</p>
+    <p class="text">This is the another paragraph</p>
+    <p class="text">This is the last paragraph</p>
+
+    <article id="first-article">
+        <h3>Article Title-1</h3>
+        <p class="author">Author -1</p>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda id esse nostrum aperiam sapiente ducimus laborum dolorem tempora, velit, praesentium aut magnam! Saepe pariatur reprehenderit inventore cupiditate animi libero vero placeat voluptas fugiat, ducimus architecto corporis doloremque. Odio illum cum nisi voluptatibus molestiae ad, qui expedita tempore minus, dolorem esse!</p>
+    </article>
+
+    <article class="special">
+        <h3>Article Title-2</h3>
+        <p class="author">Author -1</p>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda id esse nostrum aperiam sapiente ducimus laborum dolorem tempora, velit, praesentium aut magnam! Saepe pariatur reprehenderit inventore cupiditate animi libero vero placeat voluptas fugiat, ducimus architecto corporis doloremque. Odio illum cum nisi voluptatibus molestiae ad, qui expedita tempore minus, dolorem esse!</p>
+    </article>
+
+    <article class="special">
+        <h3>Article Title-3</h3>
+        <p class="author">Author -1</p>
+        <p class="description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Assumenda id esse nostrum aperiam sapiente ducimus laborum dolorem tempora, velit, praesentium aut magnam! Saepe pariatur reprehenderit inventore cupiditate animi libero vero placeat voluptas fugiat, ducimus architecto corporis doloremque. Odio illum cum nisi voluptatibus molestiae ad, qui expedita tempore minus, dolorem esse!</p>
+    </article>
+
+    <h3>Grocery List</h3>
+    <!-- ul>li{list item -$}*5 -->
+    <ul id="list">
+        <li>list item -1</li>
+        <li>list item -2</li>
+        <li>list item -3</li>
+        <li>list item -4</li>
+        <li>list item -5</li>
+    </ul>
+    
+    
+    <script>
+        document.getElementById('title').style.color = "red";
+        document.getElementById('title').style.fontSize = "45px";
+        document.getElementById('title').style.backgroundColor = "cyan";
+        document.getElementsByClassName('text')[1].style.color = "red";
+
+        document.querySelector('.author').style.backgroundColor = 'lightblue';
+        var authors = document.querySelectorAll('.special h3');
+        for(let index = 0;index<authors.length;index++){
+            const element = authors[index];
+            element.style.backgroundColor = 'yellow';
+            element.style.margin = '15px';
+            //  modify: element.innerHTML = 'Poet - ' + (index + 1);
+        }
+
+        const article = document.getElementById('first-article');
+        const newParagraph = document.createElement('p');
+        newParagraph.innerHTML = 'This paragraph is created using JS';
+        article.appendChild(newParagraph);
+
+        const ul = document.getElementById('list');
+        const li = document.createElement('li');
+        li.innerHTML = 'This list item is created using Js';
+        ul.appendChild(li);
+
+        var element = document.querySelector('#list');
+        // element.style.display = "none";
+        // element.parentNode.removeChild(element);
+
+
+
+    </script>
+</body>
+</html>
